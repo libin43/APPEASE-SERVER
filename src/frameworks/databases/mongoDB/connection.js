@@ -1,7 +1,10 @@
+
 export default function mongoConnection(mongoose, config, options) {
+  const uri = config.mongo.uri
+  console.log(uri);
     function connectToMongo() {
       mongoose
-        .connect(config.mongo.uri, options)
+        .connect(uri, options)
         .then(
           () => {},
           (err) => {
