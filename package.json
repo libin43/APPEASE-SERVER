@@ -2,6 +2,9 @@
   "name": "appointment-server",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=15.0.0"
+  },
   "type": "module",
   "main": "index.js",
   "scripts": {
