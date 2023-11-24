@@ -1,5 +1,5 @@
-import userRoute from "./user";
+import userRoute from "./user.js";
 
 export default function routes(app, express){
-    app.use('/api/user', userRoute(express));
+    app.use('/api/v1/user', userRoute(express));
 }

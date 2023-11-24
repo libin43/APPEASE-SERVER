@@ -4,12 +4,12 @@ export default async function userRefreshAuth(
     serviceToken,
 ) {
     const userDecoded = await serviceToken.verifyRefreshToken(token)
-    console.log(userDecoded,'decoded');
-    const firstName = userDecoded?.firstName
+    console.log(userDecoded,'decoded refresh');
+    // const firstName = userDecoded?.firstName
     const email = userDecoded?.email
-    const role = userDecoded?.role
+    // const role = userDecoded?.role
     const user = await dbUserRepo.userEmail(email, 'firstName email role -_id')
-    if(!user) throw new Error('jwt malform')
+    if(!user) throw new Error('User not found')
     const payload = {
         firstName: user?.firstName,
         email: email,

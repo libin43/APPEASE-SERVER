@@ -4,11 +4,11 @@ dotenv.config()
 
 export default function webTokenService(){
     const generateAccessToken = (payload) => {
-        return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '10s'})
+        return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '30m'})
     }
 
     const generateRefreshToken = (payload) => {
-        return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '20s'})
+        return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '1h'})
     }
 
     const verifyAccessToken = (token) => jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
