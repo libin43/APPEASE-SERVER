@@ -7,15 +7,15 @@ export default function expressConfig(app, express, config) {
   app.use(helmet())
 
   const corsOptions = {
-    "origin": "*",
+    "origin": ["https://your-vercel-app.vercel.app", "http://localhost:5173"],
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    // "allowedHeaders": "Content-Type, Authorization",
+    "allowedHeaders": "Content-Type, Authorization",
     "credentials": true,
     "preflightContinue": false,
     "optionsSuccessStatus": 204
   }
 
-  app.use(cors())
+  app.use(cors(corsOptions))
 
   app.use(express.json());
   
