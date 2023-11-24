@@ -7,7 +7,7 @@ export default function expressConfig(app, express, config) {
   app.use(helmet())
 
   const corsOptions = {
-    "origin": "http://localhost:5173",
+    "origin": "*",
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
     "allowedHeaders": "Content-Type, Authorization",
     "credentials": true,
