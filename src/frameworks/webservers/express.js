@@ -15,7 +15,7 @@ export default function expressConfig(app, express, config) {
     "optionsSuccessStatus": 204
   }
 
-  app.use(cors(corsOptions))
+  app.use(cors())
 
   app.use(express.json());
   
