@@ -9,6 +9,8 @@ import errorHandle from './frameworks/webservers/middlewares/errorHandle.js';
 const app = express();
 expressConfig(app, express, config)
 mongoConnection(mongoose, config,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     connectTimeoutMS: 5000,
 }).connectToMongo()
 
