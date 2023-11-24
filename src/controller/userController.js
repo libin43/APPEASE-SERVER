@@ -43,7 +43,7 @@ export default function userController(
     
     const authenticateUser = async (req, res, next) => {
         try{
-            console.log('called in authenti');
+            console.log('called in login');
             const {
                 email,
                 password,
