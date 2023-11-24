@@ -1,12 +1,8 @@
-import dotenv from 'dotenv'
-const uri = dotenv.config()
 
-process.env.MONGO_URL
 export default function mongoConnection(mongoose, config, options) {
-  console.log(uri);
     function connectToMongo() {
       mongoose
-        .connect(uri, options)
+        .connect(config.mongo.uri, options)
         .then(
           () => {},
           (err) => {
